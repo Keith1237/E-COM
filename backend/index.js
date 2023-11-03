@@ -66,7 +66,7 @@ app.post("/login", async (req, res) => {
         res.send({message: "login suuccessfully",alert :true,data:datasend});
     }
     else{
-        res.send({message: "please email is not available",alert :false}); 
+        res.send({message: "email is not available, please signup",alert :false}); 
     }
     
 

@@ -16,6 +16,7 @@ const UserLogin = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setData((preve) => {
@@ -26,7 +27,7 @@ const UserLogin = () => {
     });
   };
   
-  const navigate = useNavigate();
+  
   const handleSubmit = async(e) => {
     e.preventDefault();
     const {  email, password } = data;
@@ -43,8 +44,10 @@ const UserLogin = () => {
       // console.log(datares);
       toast(datares.message);
       if(datares.alert){
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
         
-        navigate("/")
       }
     }else{
         alert("Enter all details");
